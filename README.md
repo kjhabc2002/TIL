@@ -19,4 +19,5 @@
 - [200707 / ReactJS로 웹 서비스 만들기-3강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200707.md)
 - [200709 / ReactJS로 웹 서비스 만들기-4강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200709.md)
 - [200710 / ReactJS로 웹 서비스 만들기-4강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200710.md)
-- [200712 / ReactJS로 웹 서비스 만들기-5강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200710.md)
+- [200712 / ReactJS로 웹 서비스 만들기-5강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200712.md)
+- [200712 / VSCode 확장 플러그인 목록]
