@@ -28,4 +28,5 @@
 
 ### Phython
 
-- [200722 / ReactJS로 웹 서비스 만들기-5강](https://github.com/kjhabc2002/TIL/blob/master/Phython/20200722.md)
+- [파이썬 기본개념](https://github.com/kjhabc2002/TIL/blob/master/Phython/phythonmemo.md)
+- [파이썬 문제풀이 모음집](https://github.com/kjhabc2002/TIL/blob/master/Phython/phythonexam.md)
