@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="http://localhost/upload.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="profile">
+    <input type="submit">
+  </form>
+</body>
+</html>
+
+<!--
+1. 파일 전송 <form>태그에서 method="post" enctype="multipart/form-data" 속성값을 추가해줄 것.
+2. 또한 <input type="file"> 태그에서 name 속성값을 지정해줄 것.
+단만 위의 두 가지는 엄밀히 따지면 서버 개발자의 몫 혹은 이렇게 적용해달라 요청을 할 수도있다. -->
