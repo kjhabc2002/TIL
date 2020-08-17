@@ -38,6 +38,8 @@
 
 - [CSS 기본개념-생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/css_class/css_basic.md)
 
+---
+
 ### Phython
 
 - [파이썬 기본개념-생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/Phython/python_basic.md)
