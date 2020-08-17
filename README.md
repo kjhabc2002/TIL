@@ -13,11 +13,30 @@
 ### CLONE CODING
 
 - [200619 / kokoatalk 기초 공부](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200619.md)
-- [200620 / CSS3강의(1)](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200620.md)
-- [200622 / CSS3강의(2)](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200622.md)
+
+- [200702 / VSCode 소개 및 설치법](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200702.md)
+- [200703 / VSCode 확장 플러그인 목록](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200703.md)
+- [200704 / 생산성을 높여주는 VSCode 단축키 및 팁 정리](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200704.md)
 - [200705 / ReactJS로 웹 서비스 만들기-1강~3강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200705.md)
 - [200707 / ReactJS로 웹 서비스 만들기-3강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200707.md)
 - [200709 / ReactJS로 웹 서비스 만들기-4강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200709.md)
 - [200710 / ReactJS로 웹 서비스 만들기-4강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200710.md)
-- [200712 / ReactJS로 웹 서비스 만들기-5강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200712_1.md)
-- [200712 / VSCode 확장 플러그인 목록](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200712_2.md)
+- [200711 / ReactJS로 웹 서비스 만들기-5강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200711.md)
+
+---
+
+### HTML
+
+- [200817 / 생활코딩 HTML강의(1)](https://github.com/kjhabc2002/TIL/blob/master/html/20200817.md)
+
+---
+
+### CSS
+
+- [200620 / CSS3강의(1)](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200620.md)
+- [200622 / CSS3강의(2)](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200622.md)
+
+### Phython
+
+- [파이썬 기본개념](https://github.com/kjhabc2002/TIL/blob/master/Phython/python_basic.md)
+- [파이썬 문제풀이 모음집](https://github.com/kjhabc2002/TIL/blob/master/Phython/pythonexam.md)
