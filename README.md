@@ -40,7 +40,7 @@
 
 ---
 
-### Phython
+### Python
 
 - [파이썬 기본개념-생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/Phython/python_basic.md)
 - [파이썬 문제풀이 모음집](https://github.com/kjhabc2002/TIL/blob/master/Phython/pythonexam.md)
