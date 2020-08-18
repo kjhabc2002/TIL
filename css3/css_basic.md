@@ -17,7 +17,7 @@ CSS는 HTML을 아름답게 꾸며주는 디자이너의 언어입니다.
 
 ![](https://media.vlpt.us/images/rimu/post/cd5153b9-9e40-4467-8f75-c17d2e188ee4/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-04-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%208.36.20.png)
 
-### 1.3 선택자의 종류
+### 1.2 선택자의 종류
 
 선택자의 타입들
 
@@ -25,28 +25,28 @@ CSS는 HTML을 아름답게 꾸며주는 디자이너의 언어입니다.
 - 클래스 선택자
 - 아이디 선택자
 
-#### 1.3.1 태그선택자
+### 1.2.1 태그선택자
 
 [태그선택자예제](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/selector_decoration_1.html)
 태그를 선택합니다. 아래코드는 이 문서의 모든 li태그라는 것입니다.
 li{color:red}
 
-#### 1.3.2 아이디 선택자 (학번1명 #)
+### 1.2.2 아이디 선택자 (학번1명 #)
 
 [아이디선택자예제](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/selectors_1.html)
 아이디 속성의 값에 해당하는 태그를 선택하는 선택자입니다. 아래의 코드는 이 문서에서 id값이 select인 태그라는 뜻입니다.
 #select{font-color:50px;}
 
-#### 1.3.3 클래스 선택자 (반전체 .)
+### 1.2.3 클래스 선택자 (반전체 .)
 
 [클래스선택자예제](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/selectors_2.html)
 클래스 속성의 값에 해당하는 태그들을 선택하는 선택자입니다.
 
-### 1.4 부모 자식 선택자
+### 1.3 부모 자식 선택자
 
 [부모자식 선택자예제](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/template.html)
 
-#### 1.4.1 조상 자손 선택자
+### 1.3.1 조상 자손 선택자
 
 아래의 태그는 ul 밑에 있는 모든 태그를 선택합니다.
 
@@ -56,7 +56,7 @@ ul li{
 }
 ```
 
-#### 1.4.2 부모 자식 선태
+### 1.3.2 부모 자식 선태
 
 아래 선택자는 #lecture 바로 밑에 있는 li만을 선택합니다.
 
@@ -75,17 +75,17 @@ ul,ol{
 }
 ```
 
-#### 1.4.3 선택자 공부 팁
+### 1.3.3 선택자 공부 팁
 
 선택자를 쉽게 공부하고 찾아 쓸 수 있는 방법
 [링크참고 | css selectors cheatsheat](https://frontend30.com/css-selectors-cheatsheet/)
 
-### 1.5 가상 클래스 선택자
+### 1.4 가상 클래스 선택자
 
 [가상 클래스 선택자예제](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/psuedo.html)
 가상 클래스 선택자는 클래스 선택자처럼 행동하지만 클래스 선택자가 아닌 선택자(엘리먼트의 특성에 따라 클래스 선택자처럼 몇몇 태그를 그룹핑한다.)
 
-### 링크와 관련된 가상 클래스 선택자
+### 1.4.1 링크와 관련된 가상 클래스 선택자
 
 - :link - 방문한 적이 없는 링크
 - :visited - 방문한 적이 있는 링크
@@ -102,7 +102,7 @@ ul,ol{
 - The color parts of the fill and stroke properties  
   \*style태그에서 위에 있는 것이 우선순위가 높다
 
-### 1.6 여러가지 선택자들
+### 1.5 여러가지 선택자들
 
 [링크참고](http://flukeout.github.io/)
 
@@ -148,28 +148,28 @@ font-family는 서체를 지정하는 속성입니다.
 - fantasy
 - monospace (고정폭)
 
-#### 2.4.1 font-weight (폰트의 두께)
+### 2.4.1 font-weight (폰트의 두께)
 
 bold사용
 
-#### 2.4.2 line-height (행과 행사이의 간격)
+### 2.4.2 line-height (행과 행사이의 간격)
 
 기본값은 normal로 수치로는 1.2에 해당합니다.
 이 수치를 기준으로 간격을 조정하면 됩니다.
 값이 1.2라면 현재 엘리먼트 폰트 크기의 1.2배만큼 간격을 준다는 의미입니다.
 
-#### 2.4.3 font
+### 2.4.3 font
 
 폰트와 관련된 여러 속성을 축약형으로 표현하는 속성입니다.
 형식은 아래와 같습니다.(순서지켜야함)
 
 font: font-style font-variant font-weight font-size/line-height font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit;
 
-#### 2.4.4 서체
+### 2.4.4 서체
 
 [고정폭과 가변폭 | 생활코딩 참고](https://opentutorials.org/module/2367/13362)
 
-#### 2.4.5 웹폰트
+### 2.4.5 웹폰트
 
 [font-family예제](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/font-family.html)
 
