@@ -33,7 +33,6 @@
 
 ### CSS
 
-<<<<<<< HEAD
 - [200620 / CSS3강의(1)](https://github.com/kjhabc2002/TIL/blob/master/css_class/20200620.md)
 - [200622 / CSS3강의(2)](https://github.com/kjhabc2002/TIL/blob/master/css_class/20200622.md)
 
@@ -44,12 +43,4 @@
 ### Phython
 
 - [파이썬 기본개념-생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/Phython/python_basic.md)
-=======
-- [200620 / CSS3강의(1)](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200620.md)
-- [200622 / CSS3강의(2)](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200622.md)
-
-### Phython
-
-- [파이썬 기본개념](https://github.com/kjhabc2002/TIL/blob/master/Phython/python_basic.md)
->>>>>>> ad3cbd7fe53f5b8aebe11d5b141c2bd53beca9b7
 - [파이썬 문제풀이 모음집](https://github.com/kjhabc2002/TIL/blob/master/Phython/pythonexam.md)
