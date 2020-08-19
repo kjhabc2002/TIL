@@ -245,11 +245,11 @@ box-sizing속성을 border-box로 지정하면 테두리를 포함한 크기를 
 
 마진겸침(margin-collapsing)현상은 상하 마진값이 어떤 상황에서 사라지는 현상을 의미합니다.
 
-1. 위, 아래 엘리먼트들의 마진이 겹칠 시 둘 중 마진이 큰게 둘 사이의 마진이 된다.
+- 위, 아래 엘리먼트들의 마진이 겹칠 시 둘 중 마진이 큰게 둘 사이의 마진이 된다.  
    [마진겹침 현상예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/margin_collapsing_1.html)
-2. 위, 아래 엘리먼트들의 마진이 겹치고, 한 엘리먼트의 시각적 요소가 없어지면, 시각적 요소가 없어진 엘리먼트 마진의 top-bottom과 left-right은 큰값으로 합쳐져 계산된다.
+- 위, 아래 엘리먼트들의 마진이 겹치고, 한 엘리먼트의 시각적 요소가 없어지면, 시각적 요소가 없어진 엘리먼트 마진의 top-bottom과 left-right은 큰값으로 합쳐져 계산된다.  
    [마진겹침 현상예제2](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/margin_collapsing_2.html)  
-   3.부모,자식 엘리먼트 사이에서 부모의 시각적 요소가 없어지면 부모,자식 중 마진이 큰 쪽이 자식 마진처럼 사용된다.
+   3.부모,자식 엘리먼트 사이에서 부모의 시각적 요소가 없어지면 부모,자식 중 마진이 큰 쪽이 자식 마진처럼 사용된다.  
    [마진겹침 현상예제3](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/margin_collapsing_3.html)
 
 ### 4.5 포지션 😫
@@ -315,7 +315,7 @@ flex를 사용하기 위해서는 컨테이너 태그에 display:flex 속성을 
 [flex예제3](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/flex_3_holygrailLayout.html)
 Holy Grail은 성배라는 뜻입니다. 많은 사람들이 성배를 찾기 위해서 노력했지만 찾지 못한 것처럼 많은 사람들이 아래와 같은 레이아웃을 만들기 위해 노력했지만 완벽한 방법을 찾지 못했습니다. 이것에 비유해서 이런 레이아웃을 성배 레이아웃이라고 부르곤 했습니다. flex는 아주 세련된 방법으로 이 문제를 간편하게 해결합니다. 여기서는 플렉스를 이용해서 성배 레이아웃을 만드는 법을 알아봅시다.
 
-![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fopentutorials.org%2Fcourse%2F2473%2F13570&psig=AOvVaw2kOv97CfjMlHlw63WktTDZ&ust=1597897131599000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLiPgui0pusCFQAAAAAdAAAAABAD)
+![](https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/2367/4744.png)
 
 ### 4.6.4 flex의 여러 속성들
 
@@ -536,7 +536,13 @@ CSS는 뛰어난 언어입니다. 하지만 CSS가 모든 면에서 좋을 수�
 
 ### 8.1 fontello
 
-팅벳폰트는 폰트 대신
+팅벳폰트는 폰트 대신 어떤 문자에 해당하는 이미지로 이루어진 폰트입니다. fontello는 딩벳이나 아이콘폰트로 제공하는 여러 서비스를 모아둔 서비스입니다. 특히 svg파일을 업로드하면 폰트로 만들어주기도 합니다.
+
+<fontello.com>
+
+- 폰트제목 옆에 🏠아이콘 누르면 폰트공급자의 홈페이지로 갈수 있다.
+
+[fontello예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/a.html)
 
 ### 8.2 buttons
 
