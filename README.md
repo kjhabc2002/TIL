@@ -26,7 +26,7 @@
 
 ### HTML
 
-- [200817 / 생활코딩 HTML강의(1)](https://github.com/kjhabc2002/TIL/blob/master/html/20200817.md)
+- [HTML 기본개념 | 생활코딩 강의](https://github.com/kjhabc2002/TIL/blob/master/html/20200817.md)
 
 ---
 
@@ -35,11 +35,19 @@
 - [200620 / CSS3강의(1)](https://github.com/kjhabc2002/TIL/blob/master/css3/20200620.md)
 - [200622 / CSS3강의(2)](https://github.com/kjhabc2002/TIL/blob/master/css3/20200622.md)
 
-- [CSS 기본개념-생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/css3/css_basic.md)
+- [CSS 기본개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/css3/css_basic.md)
+
+---
+
+### JavaScript
+
+- [JavaScript 기본개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/javascript/javascript_basic.md)
 
 ---
 
 ### Python
 
-- [파이썬 기본개념-생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/Phython/python_basic.md)
+- [파이썬 기본개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/Phython/python_basic.md)
 - [파이썬 문제풀이 모음집](https://github.com/kjhabc2002/TIL/blob/master/Phython/pythonexam.md)
+
+---
