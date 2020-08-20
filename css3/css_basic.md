@@ -325,15 +325,23 @@ Holy Grail은 성배라는 뜻입니다. 많은 사람들이 성배를 찾기 �
 
 ### 4.7 media query
 
+[미디어쿼리예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/mediaquery.html)  
+[미디어쿼리예제2](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/mediaquery_2.html)  
 media query는 화면의 종류와 크기에 따라서 디자인을 달리 줄 수 있는 css기능입니다.
 
 ### 4.8 float
 
 float는 편집 디자인에서 이미지를 삽화로 삽입할 때 사용하는 기법입니다. 또한 레이아웃을 잡을 때도 사용하는 기능이기 때문에 꽤 중요합니다.
 
+[float예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/float.html)
+
 ### 4.8.1 float를 활용한 holy grail layout
 
+[holy grail layout예제](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/float_2_holy_grail_layout.html)
+
 ### 4.9 다단(multi column)
+
+[다단예제](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/multi_column.html)
 
 다단(multi column)은 아래 신문처럼 화면을 분할해서 좀 더 읽기 쉽도록 만든 레이아웃을 의미합니다. css에서는 이러한 레이아웃을 쉽게 구현할 수 있는 기능을 제공합니다.
 ![](https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/2367/4800.gif)
@@ -366,11 +374,13 @@ background : 엘리먼트의 배경에 이미지나 색깔 등을 지정할 수 
 
 ### 5.2 필터(filter)
 
+[필터예제](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/filter.html)
+
 필터는 기존에 포토샵 등을 통해서 이미지나 텍스트에 필터효과를 주었던 것을 코드화한 기능
 
 - 비교적 신기술이기 때문에 접두사를 붙이는 것이 좋다(-webket:크롬용, -o:오페라용)
 
-[CSS filter playground](https://bennettfeely.com/image-effects/)
+[CSS filter playground](https://bennettfeely.com/image-effects/)  
 [CSS-TRICKS-filter](https://css-tricks.com/almanac/properties/f/filter/)
 
 codepen.io 사이트 참고
@@ -381,11 +391,13 @@ blend는 이미지와 이미지를 혼합해서 새로운 이미지를 만들어
 
 ### 5.3.1 background-blend-mode
 
+[혼합예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/blend_1.html)  
 배경과 배경(이미지,색깔 등)을 혼합
 \*rpga(a는 투명도 0)
 
 ### 5.3.2 mix-blend-mode
 
+[혼합예제2](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/blend_2.html)  
 컨텐트와 배경 사이의 블랜드 효과
 
 ### 5.4 변형(transform)
@@ -430,6 +442,10 @@ transform: initial;
 transform: unset;
 ```
 
+[변형예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/transform_1.html)
+
+[변형예제2](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/transform_2.html)
+
 참고
 
 - [Caniuse | 트랜스폼을 현재 얼마나 많은 브라우저가 지원하고 있는지](https://caniuse.com/#search=transform)
@@ -441,6 +457,9 @@ transform: unset;
 ### 5.5 SVG
 
 svg는 백터(vector) 이미지를 표현하기 위한 포맷으로 w3c에서 만든 백터 이미지 표준입니다. SVG자체는 CSS가 아닙니다만 CSS를 이용해서 다양한 효과를 줄 때 SVG를 활용하는 경우가 많기 때문에 여기서는 SVG에 대해서 간략하게 언급만 하겠습니다.
+
+[svg예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/svg_1.html)  
+[svg예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/svg_1.html)
 
 참고
 
@@ -463,12 +482,16 @@ css의 최신버전에서는 포토샵이나 플래쉬와 같은 프로그램으
 - transition-delay : 처음에 시간차를 두고 전환
 - transition-timing-function : 장면전환속도를 균일하지 않게(ceaser사이트 참고)
 
+[transition예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/transition_1.html)
+
+[transition예제2](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/transition_2.html)
+
 ### 6.2 전환의 심화내용
 
 참고
 
 - [transition timming function 만들기](https://matthewlein.com/tools/ceaser)
-- [transition을 사용할 수 있는지 확인(caniuse.com)]()
+- transition을 사용할 수 있는지 확인(caniuse.com)
 
 ## 7. 유지보수
 
@@ -481,11 +504,19 @@ css의 최신버전에서는 포토샵이나 플래쉬와 같은 프로그램으
 외부로 파일을 빼는 방법은 크게 두가지 입니다.
 
 1. 별도의 css파일을 여러 html에 로드할 때 쓰임 (보편적임)
+
+```
 <link rel="stylesheet" href="style.css">
+```
 
 2. 링크라는 태그로 인해 html을 태그로 로드할때 쓰임, style.css파일안에서도 적용가능
 
+```
  <style>@import url("style.css")</style>
+```
+
+[link예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/link_1.html)  
+[link예제2](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/link_2.html)
 
 ### 7.2 코드 경량화(minify)
 
@@ -496,6 +527,8 @@ CSS는 네트워크를 통해서 전송됩니다. 자연스럽게 CSS의 크기�
 - http://adamburgess.github.io/clean-css-online/
 - [clen-css]
 - [nodejs설치]
+
+[minify예제](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/minify.html)
 
 ### 7.3 CSS 뛰어넘기(preprocessor)
 
@@ -523,6 +556,12 @@ CSS는 뛰어난 언어입니다. 하지만 CSS가 모든 면에서 좋을 수�
 
 3. pp.styl 파일에서 붙여넣기하여 활용
 
+[preprocessor예제 | html파일](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/pp.html)
+
+[preprocessor예제 | styl파일](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/pp.styl)
+
+[preprocessor예제 | css파일](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/pp.css)
+
 ### 7.3.3 명령어를 이용해서 컴파일
 
 1. https://stylus-lang.com/ -> stylus홈페이지 접속
@@ -538,11 +577,15 @@ CSS는 뛰어난 언어입니다. 하지만 CSS가 모든 면에서 좋을 수�
 
 팅벳폰트는 폰트 대신 어떤 문자에 해당하는 이미지로 이루어진 폰트입니다. fontello는 딩벳이나 아이콘폰트로 제공하는 여러 서비스를 모아둔 서비스입니다. 특히 svg파일을 업로드하면 폰트로 만들어주기도 합니다.
 
-<fontello.com>
+참고사이트 : <fontello.com>
 
 - 폰트제목 옆에 🏠아이콘 누르면 폰트공급자의 홈페이지로 갈수 있다.
 
-[fontello예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/a.html)
+[fontello예제1](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/fontello_1.html)
+
+- css는 어떠한 정보를 꾸며주는 것 뿐만아니라 시각적으로 글자를 변형시키는 것도 가능하다
+
+[fontello예제2](https://github.com/kjhabc2002/TIL/blob/master/css3/Exam2020/fontello_2.html)
 
 ### 8.2 buttons
 
