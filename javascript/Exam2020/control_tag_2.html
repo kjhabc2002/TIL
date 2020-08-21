@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <h1><a href="index.html">WEB</a></h1>
+     
+    <input id="night_day" type="button"value="night" onclick="
+    var target=document.querySelector('body');
+    
+   if(this.value === 'night'){   target.style.backgroundColor='black';   target.style.color='white';
+   this.value='day';
+   
+   var alist =document.querySelectorAll('a');
+var i=0;
+while(i<alist.length){
+alist[i].style.color='powderblue';
+i=i+1;
+}
+   }else{    
+    target.style.backgroundColor='white';   target.style.color='black';
+  this.value='night'
+   var alist =document.querySelectorAll('a');
+var i=0;
+while(i<alist.length){
+alist[i].style.color='blue';
+i=i+1;
+}
+   }
+    ">
+    <ol>
+        <li><a href="1.html">html</a></li>
+        <li><a href="2.html">css</a></li>
+        <li><a href="3.html">javascript</a></li>
+    </ol>
+    <h2>JavaScript</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ipsum nisi, pellentesque sit amet malesuada non, laoreet eget lorem. Cras venenatis dolor vitae mauris sagittis, sed auctor massa volutpat. Ut fermentum tellus a finibus venenatis. Nullam vel posuere ligula, sed vulputate massa. Phasellus vel odio quis lacus rhoncus suscipit in sed tortor. Duis pharetra, felis eu ornare convallis, erat sapien vulputate sem, vitae congue quam quam commodo turpis. Aliquam eu ante luctus, elementum eros eget, tincidunt odio. Donec accumsan lobortis sem in porta. In lacinia quam nec dolor laoreet scelerisque. Aliquam erat volutpat. Cras pellentesque purus mi, vitae mattis velit pharetra vel. Duis rutrum molestie risus a tincidunt. Donec ultricies eros massa, eget vehicula tortor aliquet sed. Ut molestie urna ac felis porttitor suscipit. Vivamus imperdiet vulputate augue a feugiat. Donec suscipit, enim sed tincidunt rhoncus, lorem ante accumsan neque, nec facilisis tellus ligula facilisis dui.
+        
+    </p>
+
+</body>
+</html>
