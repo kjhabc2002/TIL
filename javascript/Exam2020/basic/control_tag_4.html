@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script>
-    function nightDayHandler(){
-     var target=document.querySelector('body');
-    
-   if(this.value === 'night'){   target.style.backgroundColor='black';   target.style.color='white';
-   this.value='day';
+<script>
+function nightDayHandler(self){
+   var target=document.querySelector('body'); 
+   if(self.value === 'night'){   target.style.backgroundColor='black';   target.style.color='white';
+   self.value='day';
    
    var alist =document.querySelectorAll('a');
 var i=0;
@@ -18,7 +17,7 @@ i=i+1;
 }
    }else{    
     target.style.backgroundColor='white';   target.style.color='black';
-  this.value='night'
+  self.value='night'
    var alist =document.querySelectorAll('a');
 var i=0;
 while(i<alist.length){
@@ -32,7 +31,7 @@ i=i+1;
 <body>
    <h1><a href="index.html">WEB</a></h1>
      
-    <input id="night_day" type="button"value="night" onclick="nightDayHandler()">
+    <input id="night_day" type="button"value="night" onclick="nightDayHandler(this)">
     <ol>
         <li><a href="1.html">html</a></li>
         <li><a href="2.html">css</a></li>

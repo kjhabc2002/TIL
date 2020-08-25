@@ -35,7 +35,7 @@
 
 ### JavaScript
 
-- [JavaScript 기초개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/javascript/javascript_basic_1.md)
+- [JavaScript 입문 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/javascript/javascript_basic_1.md)
 
 - [JavaScript 기본개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/javascript/javascript_basic_2.md)
 

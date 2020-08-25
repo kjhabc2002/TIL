@@ -1,4 +1,4 @@
-# JavaScript
+# JavaScript 입문
 
 ## 1. 수업의 목적
 
@@ -16,13 +16,13 @@ javascript를 쓴다고 알리는 것이 script태그이고, 자바스크립트�
 
 ### 1.2 HTML과 JavaScript의 만남2 (이벤트)
 
-[이벤트 예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/ex1.html)  
+[이벤트 예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/ex1.html)  
 사건을 통해 사용자가 상호작용 가능한 웹을 만들 수 있다.  
 자주 사용하는 event에는 10~20개 정도가 있는데 on click/on change/ on keydown 등이 있다.
 
 ### 1.3 HTML과 JavaScript의 만남3 (콘솔)
 
-[콘솔 예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/ex2.html)
+[콘솔 예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/ex2.html)
 
 javascript는 script 태그를 이용하거나, 특정사건 event에 대해서 on ~ attribute를 추가해서 실행하거나, console에서 웹페이지에 실행시키는 용도로 사용할 수 있다.
 
@@ -77,8 +77,8 @@ document.querySelector('selector');
 
 ### 5. 비교 연산자와 블리언
 
-[비교,블리언예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/ex4.html)  
-[비교,블리언예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/ex4.html)
+[비교,블리언예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/ex4.html)  
+[비교,블리언예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/ex4.html)
 
 좌항과 우항을 비교해서 true or false값을 나타내는 것이 비교연산자이고,
 true와 false 두개를 가르켜서 불리언이라고 한다.
@@ -98,7 +98,7 @@ javascript element get value 검색하여 콘솔창에 입력
 
 ### 8. 배열
 
-[배열예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/ex6.html)
+[배열예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/ex6.html)
 
 1. var cowokers=["egoing","leezche"]; 배열정의
 2. document.write(cowokers[0]); 배열 첫번째 자리 출력
@@ -107,15 +107,15 @@ javascript element get value 검색하여 콘솔창에 입력
 
 ### 9. 반복문
 
-[배열예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/ex7.html)
+[배열예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/ex7.html)
 
 ### 10. 배열과 반복문
 
-[배열과반복문예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/ex8.html)
+[배열과반복문예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/ex8.html)
 
 ### 11. 배열과 반복문의 활용
 
-[배열예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/control_tag_2.html)
+[배열예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/control_tag_2.html)
 
 1. document.querySelector("a") 는 맨처음 a태그 하나만 출력  
    <a href=​"index.html">​WEB​</a>​
@@ -140,11 +140,11 @@ javascript element get value 검색하여 콘솔창에 입력
 
 ### 12. 함수의 예제
 
-[함수예제1 | 배열예제에서 함수기능을 추가함으로써 가독성증대](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/control_tag_3.html)
+[함수예제1 | 배열예제에서 함수기능을 추가함으로써 가독성증대](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/control_tag_3.html)
 
 ### 12.1 매개변수(parameter)와 인자(argument)
 
-[함수예제2](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/function_1.html)
+[함수예제2](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/function_1.html)
 
 - 함수안으로 매개해준다는 변수 left,right를 매개변수
 
@@ -152,8 +152,8 @@ javascript element get value 검색하여 콘솔창에 입력
 
 ### 12.3 리턴
 
-[함수예제3](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/function_3.html)
+[함수예제3](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/function_3.html)
 
 ### 12.4 함수의 활용
 
-[함수예제4](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/control_tag_4.html)
+[함수예제4](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/basic/control_tag_4.html)
