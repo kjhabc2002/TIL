@@ -1,5 +1,7 @@
 # JavaScript
 
+## 1. 수업의 목적
+
 html과 css는 정적인 언어입니다. 정적이라는 것은 이것들이 브라우저를 통해서 웹페이지를 화면에 그려주면 이 화면을 변경할 수 있는 방법이 없다는 의미입니다.
 
 - 정적인 웹페이지? 서버에 미리 저장된파일(html,image,javascript파일 등)이 그대로 전달되는 웹페이지 , 한번화면에 출력되면 그모습 그대로 유지하는 페이지
@@ -8,18 +10,19 @@ html과 css는 정적인 언어입니다. 정적이라는 것은 이것들이 �
 
 jQuery : 자바스크립트 라이브러리입니다. 라이브러리란 자주 사용하는 기능들을 모아두었다가 필요할 때 그냥 가져다 쓸 수 있도록한것들의 묶음 , jquery는 자바스크립트의 생산성을 극적으로 향상시켜주는 기술입니다.
 
-## 1. 수업의 목적
-
 ### 1.1 HTML과 JavaScript의 만남1 (script 태그)
 
 javascript를 쓴다고 알리는 것이 script태그이고, 자바스크립트는 동적인 언어이다 (1+1)가 2가 나온다.
 
 ### 1.2 HTML과 JavaScript의 만남2 (이벤트)
 
+[이벤트 예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/ex1.html)  
 사건을 통해 사용자가 상호작용 가능한 웹을 만들 수 있다.  
 자주 사용하는 event에는 10~20개 정도가 있는데 on click/on change/ on keydown 등이 있다.
 
 ### 1.3 HTML과 JavaScript의 만남3 (콘솔)
+
+[콘솔 예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/ex2.html)
 
 javascript는 script 태그를 이용하거나, 특정사건 event에 대해서 on ~ attribute를 추가해서 실행하거나, console에서 웹페이지에 실행시키는 용도로 사용할 수 있다.
 
@@ -73,6 +76,9 @@ document.querySelector('selector');
 3. javascript background color 검색 후 예제참고
 
 ### 5. 비교 연산자와 블리언
+
+[비교,블리언예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/ex4.html)  
+[비교,블리언예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/ex4.html)
 
 좌항과 우항을 비교해서 true or false값을 나타내는 것이 비교연산자이고,
 true와 false 두개를 가르켜서 불리언이라고 한다.

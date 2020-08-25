@@ -22,13 +22,9 @@
 - [200710 / ReactJS로 웹 서비스 만들기-4강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200710.md)
 - [200711 / ReactJS로 웹 서비스 만들기-5강](https://github.com/kjhabc2002/TIL/blob/master/CLONE_CODING/20200711.md)
 
----
-
 ### HTML
 
 - [HTML 기본개념 | 생활코딩 강의](https://github.com/kjhabc2002/TIL/blob/master/html/20200817.md)
-
----
 
 ### CSS
 
@@ -37,17 +33,13 @@
 
 - [CSS 기본개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/css3/css_basic.md)
 
----
-
 ### JavaScript
 
-- [JavaScript 기본개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/javascript/javascript_basic.md)
+- [JavaScript 기초개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/javascript/javascript_basic_1.md)
 
----
+- [JavaScript 기본개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/javascript/javascript_basic_2.md)
 
 ### Python
 
 - [파이썬 기본개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/Phython/python_basic.md)
-- [파이썬 문제풀이 모음집](https://github.com/kjhabc2002/TIL/blob/master/Phython/pythonexam.md)
-
----
+- [파이썬 문제풀이 모음집](https://github.com/kjhabc2002/TIL/blob/master/Phython/python_exam.md)
