@@ -120,10 +120,10 @@ javascript element get value 검색하여 콘솔창에 입력
    -> <a href=​"index.html">​WEB​</a> ​
 
 4. document.querySelectorAll("a") 사용하여 alist의 a태그들의 목록을 담고있는 배열 출력  
-    var alist =document.querySelectorAll('a');  
-    console.log(alist.length);  
-    -> 4
-   5.alist 배열들의 색상을 powderblue색상으로 변경
+   var alist =document.querySelectorAll('a');  
+   console.log(alist.length);  
+   -> 4
+5. alist 배열들의 색상을 powderblue색상으로 변경 -while문 사용
    var alist =document.querySelectorAll('a');  
    var i=0;  
    while(i<alist.length){  
@@ -134,10 +134,20 @@ javascript element get value 검색하여 콘솔창에 입력
 
 ### 12. 함수의 예제
 
-[함수예제 | 배열예제에서 함수기능을 추가함으로써 가독성증대](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/control_tag_3.html)
+[함수예제1 | 배열예제에서 함수기능을 추가함으로써 가독성증대](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/control_tag_3.html)
 
-### 12.1 함수
+### 12.1 매개변수(parameter)와 인자(argument)
 
-### 12.2 매개변수(parameter)와 인자(argument)
+[함수예제2](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/function_1.html)
+
+- 함수안으로 매개해준다는 변수 left,right를 매개변수
+
+- 함수로 전달하는 인자를 argument
 
 ### 12.3 리턴
+
+[함수예제3](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/function_3.html)
+
+### 12.4 함수의 활용
+
+[함수예제4](https://github.com/kjhabc2002/TIL/blob/master/javascript/Exam2020/control_tag_4.html)
