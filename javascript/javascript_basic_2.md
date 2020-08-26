@@ -10,6 +10,27 @@
   - [외부파일로 분리](#외부파일로-분리)
   - [script파일의 위치](#script파일의-위치)
 - [Object Model](#Object-Model)
+  - [DOM(Document Object Model)](#DOM-:Document-Object-Model)
+  - [BOM(Browser Object Model)](#BOM-:Browser-Object-Model)
+- [BOM](#BOM)
+  - [window객체](#Window객체)
+  - [전역객체](#전역객체)
+  - [사용자와 커뮤니케이션 하기](#사용자와-커뮤니케이션-하기)
+    - [alert](#alert)
+    - [confirm](#confirm)
+    - [prompt](#prompt)
+  - [Location객체](#Location객체)
+    - [현재 윈도우의 URL알아내기](#현재-윈도우의-URL알아내기)
+    - [url parsing](#url-parsing)
+    - [url 변경하기](#url-변경하기)
+  - [navigator 객체](#navigator-객체)
+- [DOM](#DOM)
+  - [제어대상을 찾기](#제어대상을-찾기)
+  - [document.getElementsByTagName](#document.getElementsByTagName)
+  - [document.getElementsByClassName](#document.getElementsByClassName)
+  - [document.getElementById](#document.getElementById)
+  - [document.querySelector](#document.querySelector)
+  - [document.querySelectorAll](#document.querySelectorAll)
 
 ## 웹브라우저와 JavaScript
 
@@ -80,12 +101,12 @@ html파일은 위에서부터 아래로 순차적으로 읽으며 실행되는�
 
 JavaScript 언어 자체에 정의되어 있는 객체들
 
-### DOM(Document Object Model)
+### DOM :Document Object Model
 
 - 웹페이지의 내용을 제어한다. window의 프로퍼티인 document 프로퍼터에 할당된 Document 객체가 이러한 작업을 담당한다.
 - document객체는 body,img 등의 태그를 제어하는데 쓰인다.
 
-### BOM(Browser Object Model)
+### BOM :Browser Object Model
 
 - 웹페이지의 내용을 제외한 브라우저의 각종 요소들을 객체화시킨 것이다. 전역객체 Window의 프로퍼티에 속한 객체들이 이에 속한다.
 
