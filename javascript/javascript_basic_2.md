@@ -829,3 +829,473 @@ console.log('clientWidth:', t.clientWidth, 'clientHeight:', t.clientHeight);
 요소의 위치를 생각할 때는 사실 조금 더 복잡해진다. 문서가 브라우저의 크기보다 큰 경우는 스크롤이 만들어지는데 스크롤에 따라서 위치의 값이 달라지기 때문이다. 이를 이해하기 위해서는 우선 viewport에 대한 이해가 선행되어야 한다.
 
 ![](https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/module/904/2408.png)
+
+아래의 예제는 1초에 한번씩 getBoundingClientRect의 top 속성과 window.pageYOffset의 값이 출력된다.  
+[viewport예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/viewport.html)
+
+getBoundingClientRect : 문서의 body태그에서부터 엘리먼트까지의 거리가 아니고,
+viewport에서부터 엘리먼트까지의 거리를 알려주는 역할을 한다.(=viewport의 좌표)
+
+![](./img/img2.png)
+
+이를 통해서 알 수 있는 것은 getBoundingClientRect의 값이 스크롤에 따라서 달라지는 뷰포트의 좌표를 사용하고 있다는 것이다. 또한 스크롤의 정도를 알고 싶을 때는 pageYOffset을 사용하면 된다는 것도 알 수 있다.
+
+### 문서의 좌표
+
+그럼 문서의 좌표를 알고 싶으면 어떻게 해야 하나? 뷰포트의 좌표에 스크롤된 정도를 더해서 알 수 있다. 아래와 같이 코드를 조금 수정했다.
+
+```
+setInterval(function(){
+    console.log('getBoundingClientRect : ', t.getBoundingClientRect().top, 'pageYOffset:', window.pageYOffset, 'document y:', t.getBoundingClientRect().top+window.pageYOffset);
+}, 1000)
+```
+
+### 스크롤
+
+문서의 스크롤 값을 변경하는 것은 어떻게 하는 것일까? scrollLeft와 scrollTop 프로퍼티를 이용하면 된다.
+
+[scroll예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/scroll.html)
+
+### 스크린의 크기
+
+스크린의 크기는 모니터의 크기와 브라우저 뷰포트의 크기가 있다.
+
+- window.ineer\* : 뷰포트의 크기
+- screen.\* : 사용자의 웹브라우저 모니터의 크기
+
+[scroll예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/screen.html)
+
+## 이벤트
+
+이벤트(event)는 어떤 사건을 의미한다. 브라우저에서의 사건이란 사용자가 클릭을 했을 '때', 스크롤을 했을 '때', 필드의 내용을 바꾸었을 '때'와 같은 것을 의미한다.
+
+[event예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/event.html)
+
+onclick 속성의 자바스크립트 코드(alert(window.location))는 사용자가 이 버튼을 클릭 했을 '때' 실행된다. 즉 js 개발자는 어떤 일이 발생했을 때 실행 되어야 하는 코드를 등록하고, 브라우저는 그 일이 발생했을 때 등록된 코드를 실행하게 된다. 이러한 방식을 이벤트 프로그래밍이라고 한다.
+
+### event target
+
+arget은 이벤트가 일어날 객체를 의미한다. 아래 코드에서 타겟은 버튼 태그에 대한 객체가 된다.
+
+```
+<input type="button" onclick="alert(window.location)" value="alert(window.href)" />
+```
+
+### event type
+
+이벤트의 종류를 의미한다. 위의 예제에서는 click이 이벤트 타입이다. 그 외에도 scroll은 사용자가 스크롤을 움직였다는 이벤트이고, mousemove는 마우스가 움직였을 때 발생하는 이벤트이다
+
+이벤트의 종류는 이미 약속되어 있다. 아래 링크는 브라우저에서 지원하는 이벤트의 종류를 보여준다.
+
+https://developer.mozilla.org/en-US/docs/Web/Reference/Events
+
+### event handler
+
+이벤트가 발생했을 때 동작하는 코드를 의미한다. 위의 예제에서는 alert(window.location)이 여기에 해당한다.
+
+## 등록방법
+
+이벤트 프로그래밍을 하기 위해서는 이벤트의 대상에 이벤트 핸들러를 등록해줘야 한다. 웹브라우저에서는 크게 3가지 종류의 등록방법을 제공하는데 하위 토픽에서 자세한 내용을 알아보겠다.
+
+### inline
+
+인라인(inline) 방식으로 이벤트를 등록하는 방법을 알아보자. 인라인 방식은 이벤트를 이벤트 대상의 태그 속성으로 지정하는 것이다.
+
+```
+input type="button" onclick="alert('Hello world');" value="button" />
+```
+
+이벤트가 발생한 대상을 필요로하는 경우 this를 통해서 참조할 수 있다.(this는 자기자신)
+
+인라인 방식은 태그에 이벤트가 포함되기 때문에 이벤트의 소재를 파악하는 것이 편리하다. 하지만 정보인 HTML과 제어인 JavaScript가 혼재된 형태이기 때문에 바람직한 방법이라고 할수는 없다.
+
+## 프로퍼티 리스너
+
+프로퍼티 리스너 방식은 이벤트 대상에 해당하는 객체의 프로퍼티로 이벤트를 등록하는 방식이다. 인라인 방식에 비해서 HTML과 JavaScript를 분리할 수 있다는 점에서 선호되는 방식이지만 뒤에서 배울 addEventListener 방식을 추천한다.
+
+```
+<input type="button" id="target" value="button" />
+<script>
+    var t = document.getElementById('target');
+    t.onclick = function(){
+        alert('Hello world');
+    }
+</script>
+```
+
+### 이벤트 객체
+
+이벤트가 실행된 맥락의 정보가 필요할 때는 이벤트 객체를 사용한다. 이벤트 객체는 이벤트가 실행될 때 이벤트 핸들러의 인자로 전달된다.
+
+```
+<body>
+    <input type="button" id="target" value="button" />
+<script>
+    var t = document.getElementById('target');
+    t.onclick = function(event){
+        alert('Hello world, '+event.target.value)
+    }
+</script>
+```
+
+## addEventListener()
+
+addEventListener은 이벤트를 등록하는 가장 권장되는 방식이다. 이 방식을 이용하면 여러개의 이벤트 핸들러를 등록할 수 있다.
+
+```
+<input type="button" id="target" value="button" />
+<script>
+    var t = document.getElementById('target');
+    t.addEventListener('click', function(event){
+        alert('Hello world, '+event.target.value);
+    });
+</script>
+```
+
+이 방식의 중요한 장점은 하나의 이벤트 대상에 복수의 동일 이벤트 타입 리스너를 등록할 수 있다는 점이다.
+
+```
+<input type="button" id="target" value="button" />
+<script>
+    var t = document.getElementById('target');
+    t.addEventListener('click', function(event){
+        alert(1);
+    });
+    t.addEventListener('click', function(event){
+        alert(2);
+    });
+</script>
+```
+
+이벤트 객체를 이용하면 복수의 엘리먼트에 하나의 리스너를 등록해서 재사용할 수 있다.
+
+```
+<input type="button" id="target1" value="button1" />
+<input type="button" id="target2" value="button2" />
+<script>
+    var t1 = document.getElementById('target1');
+    var t2 = document.getElementById('target2');
+    function btn_listener(event){
+        switch(event.target.id){
+            case 'target1':
+                alert(1);
+                break;
+            case 'target2':
+                alert(2);
+                break;
+        }
+    }
+    t1.addEventListener('click', btn_listener);
+    t2.addEventListener('click', btn_listener);
+</script>
+```
+
+## 이벤트 전파😵
+
+html태그는 중첩되어 있다. 따라서 특정한 태그에서 발생하는 이벤트는 중첩되어 있는 태그들 모두가 대상이 될 수 있다. 이런 경우 중첩된 태그들에 이벤트가 등록 되어 있다면 어떻게 처리 될까?
+
+### 캡처링
+
+[캡처링예제1](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/capturing_1.html)
+
+실행결과
+
+```
+INPUT HTML capturing
+INPUT BODY capturing
+INPUT FIELDSET capturing
+INPUT INPUT target
+```
+
+이벤트가 부모에서부터 발생해서 자식으로 전파되고 있다. 이러한 방식을 capturing이라고 한다.
+
+### 버블링
+
+이벤트 전파에서 실세다. (많이 쓰임)  
+[캡처링예제2](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/capturing_2.html)  
+위의 캡쳐링예제에서 true-> false로 바꾸어보자.
+
+```
+document.getElementById('target').addEventListener('click', handler, false);
+document.querySelector('fieldset').addEventListener('click', handler, false);
+document.querySelector('body').addEventListener('click', handler, false);
+document.querySelector('html').addEventListener('click', handler, false);
+```
+
+실행결과
+
+```
+INPUT INPUT target
+INPUT FIELDSET bubbling
+INPUT BODY bubbling
+INPUT HTML bubbling
+```
+
+이번에는 순서가 반대로 되었다. 자식부터 부모로 이벤트가 전파되는 것을 버블링(bubbling)이라고 한다.
+
+아래 예제와 같이 이벤트 전파를 중간에 가로막을 수도 있다.
+
+[버블링 예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/capturing_2.html)
+
+실행결과 : body태그까지 전파된다.
+
+```
+INPUT INPUT target
+INPUT FIELDSET bubbling
+INPUT BODY bubbling
+```
+
+## 기본동작의 취소
+
+웹브라우저의 구성요소들은 각각 기본적인 동작 방법을 가지고 있다.
+
+- 텍스트 필드에 포커스를 준 상태에서 키보드를 입력하면 텍스트가 입력된다.
+- 폼에서 submit 버튼을 누르면 데이터가 전송된다.
+- a 태그를 클릭하면 href 속성의 URL로 이동한다.
+
+이러한 기본적인 동작들을 기본 이벤트라고 하는데 사용자가 만든 이벤트를 이용해서 이러한 기본 동작을 취소할 수 있다.
+
+### inline
+
+이벤트의 리턴값이 false이면 기본 동작이 취소된다.  
+[inline예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/inline.html)
+
+## 이벤트 타입
+
+아래는 onclick 이벤트 타입의 예제다. 이벤트 타입이라는 것은 이벤트의 종류라고 할 수 있다.
+
+`<input type="button" onclick="alert(1);" />`
+
+웹브라우저는 많은 종류의 이벤트 타입을 제공한다. 하위 토픽에서는 주요한 이벤트 타입을 중심으로 어떤 이벤트 타입이 있는지 알아보겠다.
+
+## 폼
+
+폼과 관련된 이벤트 타입을 알아보자.
+
+### submit
+
+submit은 폼의 정보를 서버로 전송하는 명령인 submit시에 일어난다.
+
+form태그에 적용된다.
+
+아래예제는 전송 전에 텍스트 필드에 값이 입력되었는지를 확인한다. 만약 값이 입력되지 않았다면 전송을 중단한다.
+
+[submit예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/submit.html)
+
+### change
+
+change는 폼 컨트롤의 값이 변경 되었을 때 발생하는 이벤트다.
+
+input(text,radio,checkbox), textarea, select 태그에 적용된다.  
+[change예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/change.html)
+
+### blur,focus
+
+focus는 엘리먼트에 포커스가 생겼을 때, blur은 포커스가 사라졌을 때 발생하는 이벤트다.
+다음 태그를 제외한 모든 태그에서 발생한다. `<base>, <bdo>, <br>, <head>, <html>, <iframe>, <meta>, <param>, <script>, <style>, <title> `  
+[blur,focus예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/blur_focus.html)
+
+## 문서로딩
+
+웹페이지를 프로그래밍적으로 제어하기 위해서는 웹페이지의 모든 요소에 대한 처리가 끝나야한다. 이것을 알려주는 이벤트는 load, DOMContentLoaded이다.
+
+아래 코드의 실행결과는 null이다. `<p id="target">Hello</p>`가 로딩되기 전에 자바스크립트가 실행되었기 때문이다.
+
+```
+<html>
+    <head>
+        <script>
+        var t = document.getElementById('target');
+        console.log(t);
+        </script>
+    </head>
+    <body>
+        <p id="target">Hello</p>
+    </body>
+</html>
+```
+
+이를 해결하기 위한 방법은 아래와 같이 스크립트를 문서 끝에 위치시키는 것이다.
+
+```
+<p id="target">Hello</p>
+<script>
+    var t = document.getElementById('target');
+    console.log(t);
+</script>
+```
+
+또 다른 방법은 load 이벤트를 이용하는 것이다.
+
+```
+<head>
+    <script>
+        window.addEventListener('load', function(){
+            var t = document.getElementById('target');
+            console.log(t);
+        })
+    </script>
+</head>
+<body>
+    <p id="target">Hello</p>
+</body>
+```
+
+그런데 load 이벤트는 문서내의 모든 리소스(이미지, 스크립트)의 다운로드가 끝난 후에 실행된다. 이것을 에플리케이션의 구동이 너무 지연되는 부작용을 초래할 수 있다.
+
+DOMContentLoaded는 문서에서 스크립트 작업을 할 수 있을 때 실행되기 때문에 이미지 다운로드를 기다릴 필요가 없다.
+
+```
+<html>
+    <head>
+        <script>
+            window.addEventListener('load', function(){
+                console.log('load');
+            })
+            window.addEventListener('DOMContentLoaded', function(){
+                console.log('DOMContentLoaded');
+            })
+        </script>
+    </head>
+    <body>
+        <p id="target">Hello</p>
+    </body>
+</html>
+```
+
+## 마우스
+
+[마우스예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/mouse.html)
+
+### 이벤트 타입
+
+웹브라우저는 마우스와 관련해서 다양한 이벤트 타입을 지원한다.
+
+- click : 클릭했을 때 발생하는 이벤트.
+- dbclick : 더블클릭 했을 때 발생하는 이벤트
+- mousedown : 마우스를 누를때 발생
+- mouseup : 마우스를 땔 때 발생
+- mousemove : 마우스를 움직일때
+- mouseover : 마우스가 엘리먼트에 진입했을 때 발생
+- mouseout : 마우스가 엘리먼트에서 빠져나갈 때 발생
+- contextmenu : 컨텍스트 메뉴가 실행될때 발생
+
+### 키보드 조합
+
+마우스 이벤트가 호출될 때 특수키(alt, ctrl, shift)가 눌려진 상태를 감지해야 한다면 이벤트 객체의 프로퍼티를 사용한다. 이 때 사용하는 프로퍼티는 아래와 같다.
+
+- event.shiftKey
+- event.altKey
+- event.ctrlKey
+
+### 마우스 포인터 위치
+
+마우스 이벤트와 관련한 작업에서는 마우스 포인터의 위치를 알아내는 것이 중요할 때가 있는데 이런 경우 이벤트 객체의 clientX와 clientY를 사용한다.
+
+## jQuery이벤트
+
+jQuery는 이벤트와 관련해서 편리한 기능을 제공한다.
+아래 예제는 직접 이벤트 프로그래밍을 하는 것과 jQuery를 이용하는 것의 차이점을 보여준다.
+
+코드 분량에 큰차이가 있다. jQuery는 크로스 브라우징을 알아서 처리해주고, 이벤트를 보다 적은 코드로 구현할 수 있도록 해준다. 이런 이유 때문에 jQuery와 같은 라이브러리를 사용하는 것이다.
+
+## on API 사용법⭐️
+
+### 기본사용법
+
+on은 jQuery에서 가장 중요한 이벤트 API이다. on API를 통해서 jQuery에서 이벤트를 다루는 방법을 알아보자.
+
+on의 기본적인 문법은 아래와 같다.  
+`.on( events [, selector ] [, data ], handler(eventObject) )`
+
+- event : 등록하고자 하는 이벤트 타입을 지정한다. (예: "click")
+- selector : 이벤트가 설치된 엘리먼트의 하위 엘리먼트를 이벤트 대상으로 필터링함
+- data : 이벤트가 실행될 때 핸들러로 전달될 데이터를 설정함
+- handler : 이벤트 핸들러 함수
+
+### selector
+
+selector 파라미터는 이벤트 대상을 필터링한다. 아래 예제를 보자.  
+[selector예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/filtering.html)
+
+위의 예제는 ul 엘리먼트의 하위 엘리먼트 중에 a, li 엘리먼트들에 대해서만 이벤트가 발생한다. 주의 할 것은 ul 엘리먼트는 이벤트가 발생하지 않는다는 점이다. 이것은 jQuery에서 이벤트 버블링을 구현하는 방법이기도 하다.
+
+### late binding
+
+Query는 존재하지 않는 엘리먼트에도 이벤트를 등록할 수 있는 놀라운 기능을 제공한다. 아래 코드를 보자.
+
+```
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $('ul').on('click','a, li', function(event){
+        console.log(this.tagName);
+    })
+</script>
+<ul>
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+</ul>
+```
+
+위의 코드는 실행되지 않는다. ul 엘리먼트가 존재하지 않을 때 이벤트 설치를 시도하고 있기 때문이다. 존재하지 않는 엘리먼트에 이벤트를 달 수 없다는 것은 이미 배운 바가 있다. 그런데 jQuery는 존재하지 않는 엘리먼트에게도 이벤트를 설치할 수 있다.
+
+```
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $('body').on('click','a, li', function(event){
+        console.log(this.tagName);
+    })
+</script>
+<ul>
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+</ul>
+```
+
+\$()의 ul을 body로 바꾸면 정상실행된다.
+
+### 다중바인딩
+
+하나의 엘리먼트에 여러개의 이벤트 타입을 동시에 등록하는 방법을 알아보자
+
+```
+<input type="text" id="target" />
+<p id="status"></p>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $('#target').on('focus blur', function(e){
+        $('#status').html(e.type);
+    })
+</script>
+```
+
+한번에 여러개의 이벤트 타입을 선택했다. 만약 이벤트에 따라서 다른 핸들러를 실행하고 싶다면 아래와 같이 코드를 변경한다.
+
+```
+<input type="text" id="target" />
+<p id="status"></p>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $('#target').on({
+        'focus' : function(e){
+
+        },
+        'blur' : function(e){
+
+        }
+    })
+</script>
+```
+
+### 이벤트 제거
+
+이벤트를 제거할 때는 off를 사용한다.
+[이벤트 제거예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/event_remove.html)
+
+## 네트워크 통신
+
+본 토픽의 하위 토픽에서는 자바스크립트를 이용해서 웹브라우저의 통신 기능을 사용하는 방법을 알아본다. 이 중에서 서버와 클라이언트 간의 데이터를 주고 받는 형식으로서 JSON과 페이지 리로드 없이 웹페이지의 내용을 변경할 수 있는 Ajax는 웹에플리케이션을 구축하는데 중요한 내용이기 때문에 주의해서 학습하자.
+
+### AJAX
