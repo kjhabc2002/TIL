@@ -33,6 +33,10 @@
 
 - [CSS 기본개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/css3/css_basic.md)
 
+### PHP
+
+- [PHP 기본개념 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/php/php_basic.md)
+
 ### JavaScript
 
 - [JavaScript 입문 | 생활코딩강의](https://github.com/kjhabc2002/TIL/blob/master/javascript/javascript_basic_1.md)

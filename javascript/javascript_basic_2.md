@@ -1298,4 +1298,236 @@ Query는 존재하지 않는 엘리먼트에도 이벤트를 등록할 수 있�
 
 본 토픽의 하위 토픽에서는 자바스크립트를 이용해서 웹브라우저의 통신 기능을 사용하는 방법을 알아본다. 이 중에서 서버와 클라이언트 간의 데이터를 주고 받는 형식으로서 JSON과 페이지 리로드 없이 웹페이지의 내용을 변경할 수 있는 Ajax는 웹에플리케이션을 구축하는데 중요한 내용이기 때문에 주의해서 학습하자.
 
-### AJAX
+## AJAX
+
+웹브라우저는 대단히 정적인 시스템이었다. 내용이 바뀌면 페이지 새로고침을 해서 내용을 새롭게 변경해야 했다. 이것은 웹이 전자 문서를 염두에 두고 고안된 시스템이기 때문에 당연하게 생각 되었다.
+Ajax는 웹브라우저와 웹서버가 내부적으로 데이터 통신을 하게 된다. 그리고 변화된 결과를 웹페이지에 프로그래밍적으로 반영함으로써 웹페이지의 로딩 없이 서비스를 사용할 수 있게 된다.
+
+jax는 Asynchronous JavaScript and XML의 약자다. 한국어로는 비동기적 자바스크립트와 XML 정도로 직역할 수 있는데 자바스크립트를 이용해서 비동기적으로 서버와 브라우저가 데이터를 주고 받는 방식을 의미한다. 이 때 사용하는 API가 XMLHttpRequest이다. 그렇다고 꼭 XML을 사용해서 통신해야 하는 것은 아니다. 사실 XML 보다는 JSON을 더 많이 사용한다.
+
+### XMLHttpRequest
+
+이 때 사용하는 API가 XMLHttpRequest이다.
+
+time.php
+
+아래코드는 현재시간을 출력한다.
+
+```
+<?php
+$d1 = new DateTime;
+$d1->setTimezone(new DateTimezone("asia/seoul"));
+echo $d1->format('H:i:s');
+?>
+```
+
+아래예제는 time.php에 접속해서 현재시간을 페이지에 표시한다.
+[XMLHttpRequest예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/demo1.html)
+
+코드를 분석해보자.
+
+1. XMLHttpRequest 객체를 생성한다.  
+   `var xhr = new XMLHttpRequest();`
+
+2. 접속하려는 대상을 지정한다. 첫번째 인자는 form 태그의 method에 대응하는 것으로 GET/POST 방식을 주로 사용한다. 두번째 인자는 접속하고자 하는 서버쪽 리소스의 주소로 form 태그의 action에 해당한다.  
+   `xhr.open('GET', './time.php');`
+
+3. onreadystatechange 이벤트는 서버와의 통신이 끝났을 때 호출되는 이벤트이다. readyState는 통신의 현재 상태를 알려준다. 4는 통신이 완료되었음을 의미한다. status는 HTTP 통신의 결과를 의미하는데 200은 통신이 성공했음을 의미한다. responseText 프로퍼티는 서버에서 전송한 데이터를 담고 있다. 이것을 id가 time 엘리먼트의 하위로 삽입한다. 이를 통해서 현재 서버에서 가져온 현재시간을 페이지 리로딩 없이 가져올 수 있다.
+
+### POST 방식
+
+[POST방식예제](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/demo2.html)  
+time.php  
+아래는 ajax를 이용해서 전송한 데이터를 받아서 현재 시간을 출력해주는 서버쪽 구현이다.
+
+```
+<?php
+$d1 = new DateTime;
+$d1->setTimezone(new DateTimezone($_POST['timezone']));
+echo $d1->format($_POST['format']);
+?>
+```
+
+## JSON
+
+JavaScript Object Notation의 약차로 Javascript에서 객체를 만들 때 사용하는 표현식을 의미한다. json이 xml을 대체해서 설정의 저장이ㅏ ㅇ
+
+객체라는 것은 중괄호로 시작하고 중괄호로 끝내야한다는 규착이 있고 값과 값사이에는 콤마(,)로 구분하고, 값의 이름과 값은 세미콜론(;)으로 구분한다.
+이 표현식은 사람도 이해하기 쉽고 기계도 이해하기 쉬우면서 데이터의 용량이 작다. 이런 이유로 최근에는 JSON이 XML을 대체해서 설정의 저장이나 데이터를 전송등에 많이 사용된다. JSON에 대한 자세한 내용은 아래 JSON의 공식홈페이지를 참조한다.
+
+http://www.json.org/json-ko.html
+
+JSON의 진가는 서버와 통신을 할 때 드러난다. Ajax 수업의 내용을 조금 개조해서 타임라인의 항목을 리스트로 표현하는 에플리케이션을 만들어보자.
+
+우선 서버 쪽에서는 타임라인의 리스트를 콤마로 구분해서 전달한다.
+
+time.php
+
+```
+<?php
+$timezones = ["Asia/Seoul", "America/New_York"];
+echo implode(',', $timezones);
+?>
+```
+
+클라이언트 측에서는 이를 받아서 처리한다.
+
+[Json예제1](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/demo3.html)
+
+주목해야 할 부분은 아래와 같다.
+
+```
+var _tzs = xhr.responseText;
+var tzs = _tzs.split(',');
+var _str = '';
+```
+
+메소드 split는 인자의 값을 기준으로 문자를 잘라서 배열로 만든다. 서버에서 전송한 Asia/Seoul,America/New_York를 split(',')하면 배열 `['Aasia/Seoul','America/New_York']`가 만들어진다.
+
+PHP의 배열을 클라이언트로 전송하기 위해서 콤마로 구분된 문자열을 만들었다. 자바스크립트에서는 이를 받아서 콤마를 구분자로 다시 배열로 만들었다.
+
+만약 PHP의 배열을 그대로 자바스크립트에서 사용할 수 있다면? 반대로 자바스크립트의 배열을 그대로 PHP에서 사용할 수 있다면 얼마나 편리할까? 이 때 사용하는 것이 JSON이다.
+
+위의 예제를 JSON화시켜보자.
+
+time.php
+
+```
+<?php
+$timezones = ["Asia/Seoul", "America/New_York"];
+header('Content-Type: application/json');
+echo json_encode($timezones);
+?>
+```
+
+결과  
+`["Asia\/Seoul","America\/New_York"]`  
+이를 처리하는 JavaScript 코드를 보자.
+
+[Json예제2](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/demo3.html)
+
+아래 코드를 통해서 서버에서 전송한 JSON 데이터를 JavaScript의 배열로 만들수 있었다
+
+`var tzs = JSON.parse(_tzs);`
+
+### 서버로 데이터 전송
+
+서버로 JSON 데이터를 전송하는 것도 가능하다. 아래 예제를 참고하자.
+
+[Json예제3](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/demo4.html)
+
+time.php
+
+```
+<?php
+$data = json_decode(file_get_contents('php://input'), true);
+$d1 = new DateTime;
+$d1->setTimezone(new DateTimezone($data['timezone']));
+echo $d1->format($data['format']);
+?>
+```
+
+## jQuery Ajax
+
+jQuery이용해서 Ajax를 사용하게 되면 많은 이점이 있는데 그 중의 하나가 크로스브라우징의 문제를 jQuery가 알아서 해결해준다는 것이다. 뿐만 아니라 여러가지 편리한 기능들을 제공한다. 이번 시간에는 jQuery를 이용해서 Ajax 통신을 하는 법을 알아보자.
+
+jQuery는 Ajax와 관련해서 많은 API를 제공한다.
+
+http://api.jquery.com/category/ajax/
+
+그 중에서 가장 중요한 API는 \$.ajax이다.
+
+### .ajax
+
+http://api.jquery.com/jQuery.ajax/
+
+\$.ajax의 문법은 아래와 같다.  
+`jQuery.ajax( [settings ] )`
+
+setting는 Ajax 통신을 위한 옵션을 담고 있는 객체가 들어간다. 주요한 옵션을 열거해보면 아래와 같다.
+
+- data : 서버로 데이터를 전송할 때 이 옵션을 사용한다.
+- dataType : 서버측에서 전송한 데이터를 어떤 형식의 데이터로 해석할 것인가를 지정한다. 값으로 올 수 있는 것은 xml, json, script, html이다. 형식을 지정하지 않으면 jQuery가 알아서 판단한다.
+- success : 성공했을 때 호출할 콜백을 지정한다.  
+  Function( PlainObject data, String textStatus, jqXHR jqXHR )
+- type : 데이터를 전송하는 방법을 지정한다. get, post를 사용할 수 있다.
+
+위의 내용을 바탕으로 Ajax 통신을 해보자.
+
+다음 예제는 Ajax 수업의 예제를 JQuery화한 것이다.
+
+time.php
+
+```
+<?php
+$d1 = new DateTime;
+$d1->setTimezone(new DateTimezone("asia/seoul"));
+echo $d1->format('H:i:s');
+?>
+```
+
+[Json예제4](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/demo5.html)
+
+XMLHttpRequest에 비해서 코드가 훨씬 간결해졌다.
+
+### POST방식
+
+POST 방식으로 통신을 할 때는 아래와 같이 처리한다. 다음 예제는 Ajax 수업의 예제를 JQuery화한 것이다.
+
+time2.php
+
+```
+<?php
+$d1 = new DateTime;
+$d1->setTimezone(new DateTimezone($_POST['timezone']));
+echo $d1->format($_POST['format']);
+?>
+```
+
+html
+
+```
+<p>time : <span id="time"></span></p>
+<form>
+    <select name="timezone">
+        <option value="Asia/Seoul">asia/seoul</option>
+        <option value="America/New_York">America/New_York</option>
+    </select>
+    <select name="format">
+        <option value="Y-m-d H:i:s">Y-m-d H:i:s</option>
+        <option value="Y-m-d">Y-m-d</option>
+    </select>
+</form>
+<input type="button" id="execute" value="execute" />
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $('#execute').click(function(){
+        $.ajax({
+            url:'./time2.php',
+            type:'post',
+            data:$('form').serialize(),
+            success:function(data){
+                $('#time').text(data);
+            }
+        })
+    })
+</script>
+```
+
+아래 코드는 form 태그의 정보를 값의이름=값의내용&값 의 형식으로 바꿔준다.  
+`data:$('form').serialize(),`
+
+### JSON처리
+
+\$.ajax를 이용해서 JSON을 처리하는 방법을 알아보자.
+
+time.php
+
+```
+<?php
+$timezones = ["Asia/Seoul", "America/New_York"];
+echo json_encode($timezones);
+?>
+```
+
+[Json예제5](https://github.com/kjhabc2002/TIL/blob/master/javascript/load/demo6.html)
