@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p>time : <span id="time"></span></p>
+  <select id="timezone">
+    <option value="Asia/Seoul">aisa/seoul</option>
+    <option value="America/New_York">America/New_York</option>
+  </select>
+  <select id="format">
+    <option value="Y-m-d H:i:s">Y-m-d H:i:s</option>
+    <option value="Y-m-d">Y-m-d</option>
+  </select>
+  <input type="button" id="execute" value="execute" />
+</body>
+<script>
+document.querySelector('input').addEventListener('click',function(event){
+  var xhr=new XMLHttpRequest();
+  //전송방식을 GET에서 POST로 변경
+  xhr.open('POST','.time2.php');
+  xhr.onreadystatechange=function(){
+    document.querySelector('#time').innerHTML=xhr.responseText;
+  }
+  //서버로 전송할 데이터 타입의 형식을 지정한다.
+  //사용자가 전송한 정보가 마치 html의 폼을 통해서 전송한 정보인 것처럼 서버에서 인식할 수 있다,
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+//서버로 전송할 데이터를 형식에 맞게 만든다. 이름=값&이름=값 ...의 형식을 지켜야 한다.
+//ex)timezone=Asia/Seoul&format=Y-m-d
+var data = '';
+data += 'timezone='+document.getElementById('timezone').value;
+data += '&format='+document.getElementById('format').value;
+//send메소드의 인자로 전송할 데이터를 전달한다.
+xhr.send(data);
+});
+</script>
+</html>

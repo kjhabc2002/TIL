@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="target" />
+<p id="status"></p>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+//    focus와 blur사이의 공백이 있으면 focus와 blur의 이벤트 핸들러를 설치할 수 있게 된다. 그렇게 되면 두개의 이벤트타입이 동시에 이벤트 핸들러를 공유할 수 있게 된다.
+    $('#target').on('focus blur', function(e){
+        $('#status').html(e.type);
+    })
+
+//    var hander=function(e){
+//        $('#status').html(e.type);
+//    }
+//    $('#target').on('focus',handler).on('blur',handler);
+//    
+//    $('#target').on(
+//    {
+//        'focus':handler,
+//        'blur':handler
+//    })
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p id="timezones"></p>
+<input type="button" id="execute" value="execute" />
+<script>
+document.querySelector('input').addEventListener('click', function(event){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', './time.php');
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+            var _tzs = xhr.responseText;
+            // Asia/Seoul, America/New_York
+            var tzs = _tzs.split(',');
+            // _tzs의 인자중에 split에 전송하게되면 위에 텍스트에서 콤마사이에 있는 문자열을 하나의 배열에 담게
+            //담게 된다. tzs=[Asia/Seoul, America/New_York]
+
+            var _str = '';
+            for(var i = 0; i< tzs.length; i++){
+                _str += '<li>'+tzs[i]+'</li>';
+            }
+            _str = '<ul>'+_str+'</ul>';
+            document.querySelector('#timezones').innerHTML = _str;
+        }
+    }
+    xhr.send();
+});
+</script>
+</body>
+</html>

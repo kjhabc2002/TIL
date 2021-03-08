@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <ul>
+       <li>HTML</li>
+       <li>CSS</li>
+       <li>javascript</li>
+       
+   </ul>
+   <ol>
+       <li>HTML</li>
+       <li>CSS</li>
+       <li>javascript</li>
+   </ol>
+   <script>
+    // 문서전체에서 태그의 이름이 li인 엘리먼트들을 가져와서 그 결과를 리턴해주는 getElementsByTagName메소드
+    var ul=document.getElementsByTagName('ul')[0];
+//ul에 있는 li태그들만 조회하고 싶다면 아래와 같이 ul태그의 elements~메소드를 선언하면 된다.
+    var lis=ul.getElementsByTagName('li');
+       for(var i=0;lis.length;i++){
+           lis[i].style.color='red';
+       }
+    </script>
+    
+</body>
+</html>

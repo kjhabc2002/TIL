@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <li id="active">javascript</li>
+    </ul>
+    <script>
+    var active=document.getElementById('active');
+//class값을 변경할 때는 프로퍼티의 이름으로 className을 사용한다.
+    active.className="important current";
+    console.log(active.className);
+//클래스를 추가할 때는 아래와 같이 문자열을 더한다
+    active.className+="readed"
+    </script>
+</body>
+</html>

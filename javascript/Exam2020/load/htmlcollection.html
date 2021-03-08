@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li id="active">javascript</li>
+    </ul>
+<script>
+    //콘솔그룹 before에서 end까지의 콘솔로그들을 그루핑해서 보여줌
+    console.group('before');
+    var lis=document.getElementsByTagName('li');
+    for(var i=0;i<lis.length;i++){
+        console.log(lis[i]);
+    }
+    console.groupEnd();
+    console.group('after');
+    lis[1].parentNode.removeChild(lis[1]);
+    for(var i=0;i<lis.length;i++){
+        console.log(lis[i]);
+    }
+    console.groupEnd();
+</script>
+</body>
+</html>

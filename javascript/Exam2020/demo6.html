@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <p id="timezones"></p>
+  <input type="button" id="execute" value="execute" />
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+      $('#execute').click(function(){
+          $.ajax({
+              url:'./time3.php',
+              //datatype을 지정, time3.php가 리턴해준 데이터가 json의 형식이라는 것을 명시
+              dataType:'json',
+              success:function(data){
+                  var str = '';
+                  for(var name in data){
+                      str += '<li>'+data[name]+'</li>';
+                  }
+                  $('#timezones').html('<ul>'+str+'</ul>');
+              }
+          })
+      })
+</script>
+</body>
+</html>

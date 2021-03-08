@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <style>
+    body{
+        padding:0;
+        margin:0;
+    }
+    div{
+        border:50px solid #1065e6;
+        padding:50px;
+        margin:50px;
+    }
+    #target{
+        width:100px;
+        height:2000px;
+    }
+</style>
+</head>
+<body>
+   
+    <div>
+        <div id="target">
+            Coding
+        </div>
+    </div>
+ 
+<script>
+var t = document.getElementById('target');
+//window.pageYOffset : 페이지 스크롤한만큼의 정도를 의미한다.
+setInterval(function(){
+    console.log('getBoundingClientRect : ', t.getBoundingClientRect().top, 'pageYOffset:', window.pageYOffset);
+}, 1000)
+</script>
+</body>
+</html>

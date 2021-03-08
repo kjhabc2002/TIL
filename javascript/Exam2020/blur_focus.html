@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input id="target" type="name" />
+<script>
+var t = document.getElementById('target');
+t.addEventListener('blur', function(event){
+    console.log('blur');  
+});
+t.addEventListener('focus', function(event){
+    console.log('focus'); 
+});
+</script>
+</body>
+</html>
