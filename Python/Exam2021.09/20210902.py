@@ -1,7 +1,5 @@
 def remove_odd_numbers(numbers):
     # 여기에 코드를 작성해주세요.
-     
-
   if(numbers[4] % 2 == 1):
     del numbers[4]
   if(numbers[3] % 2 == 1):
