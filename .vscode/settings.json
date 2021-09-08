@@ -1,4 +1,6 @@
 {
+    "python.pythonPath":"C:\\Python39\\python.exe",
     "pasteImage.path": "${currentFileDir}/images/",
-    "pasteImage.prefix": "./"
+    "pasteImage.prefix": "./",
+    "python.languageServer": "Pylance"
 }
